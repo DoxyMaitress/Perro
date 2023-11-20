@@ -99,11 +99,11 @@ public class Main {
             System.out.print("Color: ");
             String color = scanner.nextLine();
             System.out.print("Dueño: ");
-            String dueño = scanner.nextLine();
+            String dueno = scanner.nextLine();
             System.out.print("Fecha de nacimiento (YYYY-MM-DD): ");
             String fechaNacimiento = scanner.nextLine();
 
-            Perro perro = new Perro(nombre, raza, edad, color, dueño, fechaNacimiento);
+            Perro perro = new Perro(nombre, raza, edad, color, dueno, fechaNacimiento);
 
             session.save(perro);
             transaction.commit();
@@ -135,7 +135,7 @@ public class Main {
                 System.out.print("Nuevo color: ");
                 String color = scanner.nextLine();
                 System.out.print("Nuevo dueño: ");
-                String dueño = scanner.nextLine();
+                String dueno = scanner.nextLine();
                 System.out.print("Nueva fecha de nacimiento (YYYY-MM-DD): ");
                 String fechaNacimiento = scanner.nextLine();
 
@@ -143,7 +143,7 @@ public class Main {
                 perro.setRaza(raza);
                 perro.setEdad(edad);
                 perro.setColor(color);
-                perro.setDueño(dueño);
+                perro.setDueno(dueno);
                 perro.setFechaNacimiento(fechaNacimiento);
 
                 session.update(perro);

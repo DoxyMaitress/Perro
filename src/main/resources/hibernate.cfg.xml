@@ -20,8 +20,8 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hibernate.hbm2ddl.auto">update</property>
         <!-- Mention annotated class -->
-        <mapping class="com.yourpackage.YourEntityClass1"/>
-        <mapping class="com.yourpackage.YourEntityClass2"/>
+        <mapping class="org.example.Usuario"/>
+        <mapping class="org.example.Perro"/>
         <!-- Add more mappings if needed -->
     </session-factory>
 </hibernate-configuration>

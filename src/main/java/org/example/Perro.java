@@ -3,9 +3,8 @@ package org.example;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "perros")
-public class Perro {
 
+public class Perro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -23,24 +22,27 @@ public class Perro {
     @Column(name = "color")
     private String color;
 
-    @Column(name = "dueño")
-    private String dueño;
+    @Column(name = "dueno")
+    private String dueno;
 
     @Column(name = "fecha_nacimiento")
     private String fechaNacimiento;
 
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+
     @Column(name = "eliminado")
     private boolean eliminado;
-
     public Perro() {
     }
 
-    public Perro(String nombre, String raza, int edad, String color, String dueño, String fechaNacimiento) {
+    public Perro(String nombre, String raza, int edad, String color, String dueno, String fechaNacimiento) {
         this.nombre = nombre;
         this.raza = raza;
         this.edad = edad;
         this.color = color;
-        this.dueño = dueño;
+        this.dueno = dueno;
         this.fechaNacimiento = fechaNacimiento;
         this.eliminado = false; // Por defecto, el perro no está eliminado
     }
@@ -87,12 +89,12 @@ public class Perro {
         this.color = color;
     }
 
-    public String getDueño() {
-        return dueño;
+    public String getDueno() {
+        return dueno;
     }
 
-    public void setDueño(String dueño) {
-        this.dueño = dueño;
+    public void setDueno(String dueno) {
+        this.dueno = dueno;
     }
 
     public String getFechaNacimiento() {
@@ -118,8 +120,8 @@ public class Perro {
                 "\nRaza: " + raza +
                 "\nEdad: " + edad +
                 "\nColor: " + color +
-                "\nDueño: " + dueño +
+                "\nDueno: " + dueno +
                 "\nFecha de Nacimiento: " + fechaNacimiento +
                 "\n----------------------";
-    }
-}
+    }}
+
